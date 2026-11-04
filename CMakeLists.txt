@@ -28,8 +28,9 @@ add_library(vakt_eigen INTERFACE)
 target_include_directories(vakt_eigen SYSTEM INTERFACE ${eigen_SOURCE_DIR})
 
 add_library(vakt_warnings INTERFACE)
+# C4324 (padding from alignas) is the point of the cache-line aligned SPSC indices.
 if(MSVC AND NOT CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-  target_compile_options(vakt_warnings INTERFACE /W4 /permissive- /utf-8 /external:W0 /external:anglebrackets
+  target_compile_options(vakt_warnings INTERFACE /W4 /permissive- /utf-8 /external:W0 /external:anglebrackets /wd4324
     $<$<BOOL:${VAKT_WERROR}>:/WX>)
 else()
   target_compile_options(vakt_warnings INTERFACE -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor
@@ -64,6 +65,13 @@ if(WIN32)
 endif()
 find_package(Threads REQUIRED)
 target_link_libraries(vakt PUBLIC Threads::Threads)
+
+if(VAKT_BUILD_APPS)
+  foreach(app vakt_sim vakt_mc vakt_live vakt_bench)
+    add_executable(${app} apps/${app}.cpp)
+    target_link_libraries(${app} PRIVATE vakt vakt_warnings)
+  endforeach()
+endif()
 
 if(VAKT_BUILD_TESTS)
   enable_testing()
