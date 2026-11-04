@@ -1,0 +1,14 @@
+{
+  "name": "manoeuvre",
+  "description": "Fast jet doing two hard turns (about 4 g and 3 g) next to a slow helicopter and a transport aircraft. 1 s revisit. This is where a single constant-velocity filter falls behind and the IMM earns its keep.",
+  "duration": 240,
+  "radar": { "scan_period": 1.0, "pd": 0.9, "clutter_per_scan": 8, "sigma_range_m": 30, "sigma_azimuth_deg": 0.3, "min_range_m": 500, "max_range_m": 60000 },
+  "targets": [
+    { "id": 1, "label": "fighter", "east_m": -30000, "north_m": 20000, "speed_mps": 250, "heading_deg": 90,
+      "legs": [ { "duration_s": 40 }, { "duration_s": 20, "turn_deg_s": 9.0 }, { "duration_s": 40 },
+                { "duration_s": 30, "turn_deg_s": -6.0 }, { "duration_s": 30, "accel_mps2": 4.0 }, { "duration_s": 25, "turn_deg_s": 7.0 } ] },
+    { "id": 2, "label": "helicopter", "east_m": 8000, "north_m": 12000, "speed_mps": 55, "heading_deg": 300,
+      "legs": [ { "duration_s": 90 }, { "duration_s": 30, "turn_deg_s": -3.0 } ] },
+    { "id": 3, "label": "transport", "east_m": 20000, "north_m": -25000, "speed_mps": 160, "heading_deg": 350 }
+  ]
+}

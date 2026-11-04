@@ -1,0 +1,11 @@
+{
+  "name": "crossing",
+  "description": "Two airliners crossing at a 20 degree angle 35 km out, a third one in trail. Rotating air-surveillance radar, 4 s revisit, moderate clutter. The classic association trap: tracks must not swap at the crossing.",
+  "duration": 300,
+  "radar": { "scan_period": 4.0, "pd": 0.9, "clutter_per_scan": 10, "sigma_range_m": 50, "sigma_azimuth_deg": 0.25, "min_range_m": 1000, "max_range_m": 80000 },
+  "targets": [
+    { "id": 1, "label": "SAS1427", "east_m": -25000, "north_m": 30000, "speed_mps": 220, "heading_deg": 100 },
+    { "id": 2, "label": "NAX33M",  "east_m": -25000, "north_m": 39000, "speed_mps": 225, "heading_deg": 120 },
+    { "id": 3, "label": "BRX12",   "east_m": -36000, "north_m": 32000, "speed_mps": 200, "heading_deg": 100, "t_start": 20 }
+  ]
+}

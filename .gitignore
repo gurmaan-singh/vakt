@@ -1,0 +1,9 @@
+build*/
+out/
+.vs/
+.vscode/
+.cache/
+compile_commands.json
+*.log
+results/runs/
+__pycache__/

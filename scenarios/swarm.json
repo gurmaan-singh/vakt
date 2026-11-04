@@ -1,0 +1,18 @@
+{
+  "name": "swarm",
+  "description": "Ten small drones in two loose groups, 300 m spacing, splitting up halfway. Low detection probability (small RCS) and heavy clutter close to the radar. Stresses closely spaced targets and track initiation.",
+  "duration": 180,
+  "radar": { "scan_period": 1.0, "pd": 0.75, "clutter_per_scan": 25, "sigma_range_m": 15, "sigma_azimuth_deg": 0.5, "min_range_m": 300, "max_range_m": 20000 },
+  "targets": [
+    { "id": 1,  "east_m": 9000, "north_m": 12000, "speed_mps": 30, "heading_deg": 225, "legs": [ { "duration_s": 80 }, { "duration_s": 20, "turn_deg_s": 4 } ] },
+    { "id": 2,  "east_m": 9300, "north_m": 12000, "speed_mps": 30, "heading_deg": 225, "legs": [ { "duration_s": 80 }, { "duration_s": 20, "turn_deg_s": -4 } ] },
+    { "id": 3,  "east_m": 9000, "north_m": 12300, "speed_mps": 30, "heading_deg": 225, "legs": [ { "duration_s": 80 }, { "duration_s": 15, "turn_deg_s": 6 } ] },
+    { "id": 4,  "east_m": 9300, "north_m": 12300, "speed_mps": 30, "heading_deg": 225, "legs": [ { "duration_s": 80 }, { "duration_s": 15, "turn_deg_s": -6 } ] },
+    { "id": 5,  "east_m": 9150, "north_m": 12600, "speed_mps": 30, "heading_deg": 225 },
+    { "id": 6,  "east_m": -8000, "north_m": 11000, "speed_mps": 35, "heading_deg": 150, "legs": [ { "duration_s": 90 }, { "duration_s": 20, "turn_deg_s": 5 } ] },
+    { "id": 7,  "east_m": -7700, "north_m": 11000, "speed_mps": 35, "heading_deg": 150, "legs": [ { "duration_s": 90 }, { "duration_s": 20, "turn_deg_s": -5 } ] },
+    { "id": 8,  "east_m": -8000, "north_m": 11300, "speed_mps": 35, "heading_deg": 150 },
+    { "id": 9,  "east_m": -7700, "north_m": 11300, "speed_mps": 35, "heading_deg": 150, "legs": [ { "duration_s": 90 }, { "duration_s": 25, "turn_deg_s": 7 } ] },
+    { "id": 10, "east_m": -7850, "north_m": 11600, "speed_mps": 35, "heading_deg": 150, "t_end": 120 }
+  ]
+}
