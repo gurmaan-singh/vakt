@@ -18,6 +18,10 @@ I built it to learn how real tracking systems work: filtering, data association,
 | **UDP and JSON output** (`udp`, `json_io`) | Streams tracks live to a map or other tool. |
 | **SPSC queue** (`spsc_queue.hpp`) | Lock-free single-producer, single-consumer queue between the sensor thread and the tracker. |
 
+## Design
+
+How a scan is processed, why an IMM, and how the results are scored: [docs/DESIGN.md](docs/DESIGN.md).
+
 ## Tools
 
 - `vakt_sim` runs one scenario and writes everything to CSV for plotting.
@@ -60,7 +64,7 @@ Built with MSVC on Windows with warnings at /W4 and no warnings. 34 unit tests p
 
 - Tested on simulated data only. There is no real radar data yet.
 - Live latency is about 4 ms, mostly Windows sleep granularity. A condition variable instead of `sleep_for` should lower it.
-- No CI yet. Linux (gcc, clang, sanitizers) and Windows builds are planned.
+- CI for Linux (gcc and clang, with and without sanitizers) and Windows is set up in `.github/workflows/ci.yml` but has not run yet.
 - Identity switches and track fragments need tuning.
 - A real-data input from public ADS-B feeds is planned.
 
