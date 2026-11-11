@@ -46,6 +46,10 @@ Every tool prints its options with `--help`.
 
 The IMM is better, but 60 identity switches is still too many. Tuning that is next.
 
+One run (seed 3) drawn by `tools/plot_run.py`: the radar plots with false alarms, the tracks, and the tracking error over time. The constant-velocity filter's error spikes at the hard turns, which is where the IMM does better.
+
+![One run of the manoeuvre scenario with the IMM and a constant-velocity filter](docs/img/manoeuvre.png)
+
 ## Build
 
 Needs CMake 3.20 or newer and a C++20 compiler. Dependencies (Eigen, nlohmann/json, GoogleTest) are fetched by CMake.
